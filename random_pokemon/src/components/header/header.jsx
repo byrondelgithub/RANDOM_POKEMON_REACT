@@ -61,6 +61,7 @@ function Header() {
         borderBottom={"4px black solid"}
         className="pokeheader"
         position={"fixed"}
+        zIndex={1000}
       >
         <Flex
           h={"100%"}

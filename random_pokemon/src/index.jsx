@@ -4,6 +4,7 @@ import MainPage from "./pages/mainPage/mainPage";
 import { ChakraProvider } from "@chakra-ui/react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import theme from "./theme";
+import "./index.scss"
 
 const router = createBrowserRouter([
   {
