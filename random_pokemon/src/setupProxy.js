@@ -15,6 +15,18 @@ module.exports = function (app) {
     })
   );
   app.use(
+    createProxyMiddleware("/projectPokemon", {
+      target: `${constants.projectPokemonAPIUrl}`,
+      changeOrigin: true,
+      pathRewrite: {
+        "^/projectPokemon": "",
+      },
+      headers: {
+        Connection: "keep-alive",
+      },
+    })
+  );
+  app.use(
     createProxyMiddleware("/pokeapi", {
       target: `${constants.pokeAPIUrl}`,
       changeOrigin: true,

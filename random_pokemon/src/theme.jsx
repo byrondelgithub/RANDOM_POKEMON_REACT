@@ -1,6 +1,22 @@
 import { extendTheme } from "@chakra-ui/react";
+import { mode } from "@chakra-ui/theme-tools";
+
+const light = "#f0f0f0";
+const dark = "#232323";
 
 const theme = extendTheme({
+  config: {
+    initialColorMode: "dark",
+    useSystemColorMode: false,
+    disableTransitionOnChange: false,
+  },
+  styles: {
+    global: (props) => ({
+      body: {
+        bg: mode(light, dark)(props),
+      },
+    }),
+  },
   fonts: {
     heading: `'Noto Sans', sans-serif`,
     body: `'Raleway Variable', sans-serif`,
@@ -34,6 +50,7 @@ const theme = extendTheme({
       200: "#AAAAAA",
       300: "#8A8A8A",
       400: "#727272",
+      900: "#222222",
     },
   },
 });

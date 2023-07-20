@@ -5,36 +5,28 @@ import {
   Spacer,
   Heading,
   Center,
-  Link,
   Image,
-  Button,
   Collapse,
-  IconButton,
   LinkBox,
   LinkOverlay,
   Hide,
   Show,
   useBoolean,
-  Drawer,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton,
-  DrawerHeader,
-  DrawerBody,
-  Stack,
-  DrawerFooter,
+  useColorMode,
 } from "@chakra-ui/react";
-import { MdArrowDropDown } from "react-icons/md";
-import { VscGithubInverted, VscThreeBars } from "react-icons/vsc";
 import pokeballImg from "../../assets/imgs/half_pokeball.png";
 import logo from "../../assets/imgs/logo.png";
 import "./header.scss";
 import CollapseContent from "./collapseContent";
+import HeaderLg from "./header-lg";
+import HeaderSm from "./header-sm";
 
 function Header() {
   const [isScrolled, setScrolled] = useState(false);
   const [aboutIsOpen, aboutSetOpen] = useBoolean();
-  const [drawerIsOpen, drawerSetOpen] = useBoolean();
+  const { colorMode } = useColorMode();
+
+  const sizeBreakpoint = "(max-width: 1300px)";
 
   useEffect(() => {
     const handler = () => {
@@ -58,7 +50,7 @@ function Header() {
         w={"100%"}
         transition={"0.3s"}
         bgColor={"pokemon.red"}
-        borderBottom={"4px black solid"}
+        borderBottom={`4px black solid`}
         className="pokeheader"
         position={"fixed"}
         zIndex={1000}
@@ -96,136 +88,43 @@ function Header() {
                   _hover={{ textDecoration: "none" }}
                   marginLeft={"10px"}
                 >
-                  <Heading transition={"0.3s"} size={!isScrolled ? "lg" : "md"}>
+                  <Heading
+                    transition={"0.3s"}
+                    size={!isScrolled ? "lg" : "md"}
+                    color={"black"}
+                  >
                     Random pokemon generator
                   </Heading>
                 </LinkOverlay>
               </Center>
             </Hide>
           </LinkBox>
+
           <Spacer />
-          <Hide below="sm">
-            <Center>
-              <Link target="_blank" href="https://github.com/byrondelgithub">
-                <IconButton
-                  variant={"link"}
-                  color={"blackAlpha.700"}
-                  transition={"0.3s"}
-                  _hover={{ color: "black", fontSize: "35px" }}
-                  aria-label={"Github"}
-                  fontSize="30px"
-                  icon={<VscGithubInverted />}
-                  marginRight={"20px"}
-                />
-              </Link>
-            </Center>
-            <Center>
-              <Button
-                fontSize={"20px"}
-                variant="ghost"
-                rightIcon={
-                  <MdArrowDropDown
-                    size={"25px"}
-                    style={{
-                      transform: aboutIsOpen ? "rotate(180deg)" : "",
-                      transition: "0.3s",
-                    }}
-                  />
-                }
-                onClick={aboutSetOpen.toggle}
-              >
-                About
-              </Button>
-            </Center>
+
+          <Hide breakpoint={sizeBreakpoint}>
+            <HeaderLg aboutIsOpen={aboutIsOpen} aboutSetOpen={aboutSetOpen} />
           </Hide>
-          <Show below="sm">
-            <Center>
-              <Button onClick={drawerSetOpen.on} size={"lg"}>
-                <VscThreeBars fontSize={"22px"}></VscThreeBars>
-              </Button>
-            </Center>
-            <Drawer onClose={drawerSetOpen.off} isOpen={drawerIsOpen}>
-              <DrawerOverlay />
-              <DrawerContent>
-                <DrawerCloseButton />
-                <DrawerHeader
-                  fontSize={"25px"}
-                  bgColor={"pokemon.red"}
-                  borderBottom={"3px black solid"}
-                >
-                  Random Pokemon Generator
-                </DrawerHeader>
-                <DrawerBody>
-                  <Stack>
-                    <Link
-                      w={"100%"}
-                      target="_blank"
-                      href="https://github.com/byrondelgithub"
-                    >
-                      <Button
-                        w={"100%"}
-                        variant={"ghost"}
-                        color={"black"}
-                        aria-label={"Github"}
-                        fontSize="20px"
-                        rightIcon={<VscGithubInverted size={"25px"} />}
-                      >
-                        My github
-                      </Button>
-                    </Link>
-                    <Button
-                      fontSize={"20px"}
-                      variant="ghost"
-                      rightIcon={
-                        <MdArrowDropDown
-                          size={"25px"}
-                          style={{
-                            transform: aboutIsOpen ? "rotate(180deg)" : "",
-                            transition: "0.3s",
-                          }}
-                        />
-                      }
-                      onClick={aboutSetOpen.toggle}
-                    >
-                      About
-                    </Button>
-                    <Collapse in={aboutIsOpen}>
-                      <Box
-                        transition={"0.3s"}
-                        w={"100%"}
-                        bg={"secondary.100"}
-                        border={"2px black solid"}
-                        borderRadius={"10px"}
-                        textAlign={"center"}
-                        paddingY={"20px"}
-                        paddingX={"20px"}
-                      >
-                        <CollapseContent />
-                      </Box>
-                    </Collapse>
-                  </Stack>
-                </DrawerBody>
-                <DrawerFooter
-                  borderTop={"3px black solid"}
-                  bgColor={"pokemon.red"}
-                  fontSize={"12px"}
-                >
-                  Thanks for using my website y viva el betis
-                </DrawerFooter>
-              </DrawerContent>
-            </Drawer>
+
+          <Show breakpoint={sizeBreakpoint}>
+            <HeaderSm aboutIsOpen={aboutIsOpen} aboutSetOpen={aboutSetOpen} />
           </Show>
         </Flex>
       </Box>
-      <Hide below="sm">
+
+      <Hide breakpoint={sizeBreakpoint}>
+        {" "}
+        {/*I cant do anything sorry, cant join both hides*/}
         <Collapse in={aboutIsOpen}>
           <Box
             marginTop={headerSize}
             position={"fixed"}
             transition={"0.3s"}
             w={"100%"}
-            borderBottom={"3.5px black solid"}
-            bg={"secondary.100"}
+            borderBottom={`3.5px ${
+              colorMode === "light" ? "black" : "white"
+            } solid`}
+            bg={colorMode === "light" ? "secondary.100" : "secondary.900"}
             textAlign={"center"}
             paddingY={"20px"}
             paddingX={"30%"}

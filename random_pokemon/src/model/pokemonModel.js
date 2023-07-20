@@ -1,29 +1,21 @@
 import { StatsModel } from "./statsModel";
 
 export class PokemonModel {
-  id = 0;
-  name = "";
-  pokedexInfo = null;
+  id = 0; //
+  name = ""; //
+  pokedexInfo = null; //
   moves = [];
-  types = [];
+  types = []; // next
   baseStats = [];
-  ability = ""; // 1/250 to be the hidden one
-  nature = "";
-  height = 0;
-  weight = 0;
-  gender = null;
-  image = null;
-  isShiny = false;
-  hiddenAbilityFlag = false;
+  ability = null; //
+  nature = ""; //
+  height = 0; //
+  weight = 0; //
+  gender = null; //
+  image = null; //
+  isShiny = false; //
 
-  constructor(
-    pokemonJSON,
-    pokedexInfo,
-    nature,
-    image,
-    isShiny,
-    hiddenAbilityFlag
-  ) {
+  constructor(pokemonJSON, pokedexInfo, abilityInfo, nature, image, isShiny) {
     this.id = pokemonJSON.id; // pokemon id
     this.name = pokemonJSON.name; // pokemon name
     this.pokedexInfo = pokedexInfo.pokedexEntries[
@@ -38,6 +30,7 @@ export class PokemonModel {
       // pokemon stats
       this.baseStats.push(new StatsModel(stat));
     });
+    this.ability = abilityInfo; // pokemon ability
     this.nature = nature; // pokemon nature
     this.height = pokemonJSON.height; // pokemon height
     this.weight = pokemonJSON.weight; // pokemon weight
@@ -47,16 +40,6 @@ export class PokemonModel {
     }
     this.image = image;
     this.isShiny = isShiny;
-    this.hiddenAbilityFlag = hiddenAbilityFlag;
-    if (hiddenAbilityFlag) {
-      this.ability =
-        pokemonJSON.abilities[pokemonJSON.abilities.length - 1].ability.name;
-    } else {
-      const idx = Math.floor(
-        Math.random() * (pokemonJSON.abilities.length - 1)
-      );
-      this.ability = pokemonJSON.abilities[idx].ability.name;
-    }
   }
 
   __getRandomMoves(possibleMoves) {
