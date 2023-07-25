@@ -1,3 +1,8 @@
+/**
+ * @file File with the hook of the header content shown when the size of the screen is smaller than medium.
+ * @author Rubén Hurtado <rhurtadoportillo@gmail.com>
+ * @exports HeaderSm
+ */
 import {
   Box,
   Button,
@@ -30,6 +35,10 @@ import constants from "../../data/constants";
 import { VscGithubInverted, VscThreeBars } from "react-icons/vsc";
 import CollapseContent from "./collapseContent";
 
+/**
+ * Content of Headers smaller than medium.
+ * @returns {Component}
+ */
 function HeaderSm({ aboutIsOpen, aboutSetOpen }) {
   const [searchValue, setSearchValue] = useState("");
   const { colorMode, toggleColorMode } = useColorMode();

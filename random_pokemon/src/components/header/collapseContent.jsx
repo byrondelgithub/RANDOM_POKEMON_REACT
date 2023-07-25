@@ -1,6 +1,15 @@
+/**
+ * @file File with a hook of the component shown when clicking on an about button.
+ * @author Rubén Hurtado <rhurtadoportillo@gmail.com>
+ * @exports CollapseContent
+ */
 import { Heading, Link, Text } from "@chakra-ui/react";
 import "./header.scss";
 
+/**
+ * Content of about collapses.
+ * @returns {Component}
+ */
 function CollapseContent() {
   return (
     <>
@@ -36,11 +45,19 @@ function CollapseContent() {
         <br />
         We get Pokemon GIFs or images using the spanish website{" "}
         <Link
-          href="https://pokeapi.co"
+          href="https://pkparaiso.com"
           target="_blank"
           textColor={"pokemon.red"}
         >
           PkParaiso
+        </Link>
+        and{" "}
+        <Link
+          href="https://projectpokemon.org"
+          target="_blank"
+          textColor={"pokemon.red"}
+        >
+          ProjectPokemon
         </Link>
         .
         <br />

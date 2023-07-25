@@ -1,3 +1,8 @@
+/**
+ * @file File with the hook of a HelpPopover template.
+ * @author Rubén Hurtado <rhurtadoportillo@gmail.com>
+ * @exports HelpPopover
+ */
 import {
   IconButton,
   Popover,
@@ -12,11 +17,15 @@ import {
 } from "@chakra-ui/react";
 import { MdHelp } from "react-icons/md";
 
+/**
+ * Components that serves as a simple template for buttons that when clicked show a small popover with extra information.
+ * @returns {Component}
+ */
 function HelpPopover({ title, body, footer, size = 40 }) {
   const { colorMode } = useColorMode();
 
   const color = colorMode === "light" ? "black" : "white";
-  const bgColor = colorMode === "light" ? "grey" : "";
+  const borderColor = colorMode === "light" ? "lightgrey" : "";
 
   return (
     <>
@@ -32,7 +41,7 @@ function HelpPopover({ title, body, footer, size = 40 }) {
             icon={<MdHelp />}
           />
         </PopoverTrigger>
-        <PopoverContent border={bgColor ? `1px ${bgColor} solid` : ""}>
+        <PopoverContent border={borderColor ? `1px ${borderColor} solid` : ""}>
           <PopoverArrow />
           <PopoverCloseButton />
           <PopoverHeader>{title}</PopoverHeader>

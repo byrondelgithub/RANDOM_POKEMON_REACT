@@ -1,3 +1,8 @@
+/**
+ * @file File with the hook of the main page composed by a Header and an Outlet brought by a router
+ * @author Rubén Hurtado <rhurtadoportillo@gmail.com>
+ */
+
 import React from "react";
 import ReactDOM from "react-dom/client";
 import MainPage from "./pages/mainPage/mainPage";
@@ -6,8 +11,13 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import theme from "./theme";
 import "./index.scss";
 import PokemonInfoLayout from "./components/pokemonInfoLayout/pokemonInfoLayout";
-import ErrorPage from "./components/errorPage/errorPage";
+import ErrorPage from "./pages/errorPage/errorPage";
 
+/**
+ * Router for the entire app. Random Pokemon Generator is pretty simple, please
+ * check the source code to check the router configuration.
+ * @constant
+ */
 const router = createBrowserRouter([
   {
     path: "/",

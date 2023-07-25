@@ -1,3 +1,8 @@
+/**
+ * @file File with the hook of the header of the app
+ * @author Rubén Hurtado <rhurtadoportillo@gmail.com>
+ * @exports Header
+ */
 import { useEffect, useState } from "react";
 import {
   Box,
@@ -21,6 +26,10 @@ import CollapseContent from "./collapseContent";
 import HeaderLg from "./header-lg";
 import HeaderSm from "./header-sm";
 
+/**
+ * Header shown in the entire app
+ * @returns {Component}
+ */
 function Header() {
   const [isScrolled, setScrolled] = useState(false);
   const [aboutIsOpen, aboutSetOpen] = useBoolean();
@@ -128,6 +137,7 @@ function Header() {
             textAlign={"center"}
             paddingY={"20px"}
             paddingX={"30%"}
+            zIndex={"1000"}
           >
             <CollapseContent />
           </Box>

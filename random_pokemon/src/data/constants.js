@@ -1,3 +1,11 @@
+/**
+ * @file File with constants used by the entire app, here are some important info, please check the source for more info
+ * @author Rubén Hurtado <rhurtadoportillo@gmail.com>
+ */
+
+/**
+ * Constants exported
+ */
 module.exports = {
   pokeAPIUrl: "https://pokeapi.co/api/v2/",
   pkParaisoAPIUrl: "https://www.pkparaiso.com/imagenes/",
@@ -44,8 +52,8 @@ module.exports = {
   specialNamesIds: [
     250, 474, 984, 985, 986, 987, 988, 989, 990, 991, 992, 993, 994, 995, 1001,
     1002, 1003, 1004, 1005, 1006, 1009, 1010,
-  ],
-  replaceWithDownSlashIds: [29, 32, 439],
-  replaceWithPointDownSlashIds: [122, 866],
-  deleteSlashIds: [772, 782, 783, 784, 785, 786, 787, 788],
+  ], // These pokemons names wont be processed
+  replaceWithDownSlashIds: [29, 32, 439], // These pokemons names slashes will be replaced with down slashes.
+  replaceWithPointDownSlashIds: [122, 866], // hese pokemons names slashes will be replaced with a dot and a down slash (only for mr mime idk why).
+  deleteSlashIds: [772, 782, 783, 784, 785, 786, 787, 788], // These pokemons names slashes will be deleted but just the slash, not the following content.
 };

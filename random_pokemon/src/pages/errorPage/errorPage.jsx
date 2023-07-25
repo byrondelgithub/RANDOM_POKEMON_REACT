@@ -1,8 +1,19 @@
+/**
+ * @file File with the hook of the error page composed by a Header and an error message with a funny gif
+ * @author Rubén Hurtado <rhurtadoportillo@gmail.com>
+ * @exports ErrorPage
+ */
+
 import { Box, Center, Heading, Image } from "@chakra-ui/react";
-import Header from "../header/header";
+import Header from "../../components/header/header";
 import { Link, useNavigate } from "react-router-dom";
 import errorGif from "../../assets/imgs/black-guy-shocked.gif";
 
+/**
+ * Simple error page that should only be used in index.jsx by the router.
+ * This error page is composed by an error message and a funny clickable gif that will return as to the main path.
+ * @returns {Component}
+ */
 function ErrorPage() {
   const navigate = useNavigate();
 

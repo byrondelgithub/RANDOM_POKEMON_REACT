@@ -1,70 +1,26 @@
-# Getting Started with Create React App
+# Random Pokemon Generator website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[You can access our website here](https://randompokemongenerator.com)
 
-## Available Scripts
+## Project Description
 
-In the project directory, you can run:
+Random Pokemon Generator is a simple web app that shows a different pokemon everytime you enter in It. At first It started as a fast project for a friends because there are no good looking websites that does this with all the pokemon.
 
-### `npm start`
+Then the project got more and more complex, to the point of adding sprites of 3 differents APIs, shinies, random pokemon moves, abilities and much more!
+You can even search for specific pokemons using its ID or name.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This project isnt related at all with Pokemon company, Im just a junior programmer wanting to learn reactjs, chakra UI and GoogleAdSense.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Credits
 
-### `npm test`
+We use a lot of APIs to get the images and information of the pokemon, please check them out:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [PkParaiso](https://pkparaiso.com): All of the animated sprites cames from here, but we only use the API to request the pokemon shield and sword HD gifs.
+- [ProjectPokemon](https://projectpokemon.org): We use this API to retrieve all of the animated sprites from pokemon x y and pokemon sun moon. They say the gifs are from PkParaiso so why dont use only PkParaiso? Well, sometimes its servers totally flop and they bad pretty bad response times.
+- [PokeAPI](https://pokeapi.co): We use this API for practically everything. We retrieve all of the pokemon info from here, we also request images when PkParaiso and ProjectPokemon fails. This API is so complete, I totally reccomend checking It out.
 
-### `npm run build`
+## Future
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Im planning on creating a totally free API for all of the pokemon similar to PokeAPI but much simpler and with high definitions animated sprites for all of the pokemons using ruby on rails. What do you think about It? Please follow me in github to keep track of that project too.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Keldeo image from pkParaiso](https://www.pkparaiso.com/imagenes/espada_escudo/sprites/animados-gigante/keldeo-s.gif)

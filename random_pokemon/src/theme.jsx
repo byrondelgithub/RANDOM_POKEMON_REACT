@@ -1,3 +1,9 @@
+/**
+ * @file File with entire theme configuration used by chakra
+ * @author Rubén Hurtado <rhurtadoportillo@gmail.com>
+ * @exports theme
+ */
+
 import { extendTheme } from "@chakra-ui/react";
 import { mode } from "@chakra-ui/theme-tools";
 

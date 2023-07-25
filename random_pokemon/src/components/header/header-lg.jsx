@@ -1,3 +1,8 @@
+/**
+ * @file File with the hook of the header content shown when the size of the screen is larger than small.
+ * @author Rubén Hurtado <rhurtadoportillo@gmail.com>
+ * @exports HeaderLg
+ */
 import {
   Button,
   Center,
@@ -18,6 +23,10 @@ import { useState } from "react";
 import constants from "../../data/constants";
 import { VscGithubInverted } from "react-icons/vsc";
 
+/**
+ * Content of Headers larger than small.
+ * @returns {Component}
+ */
 function HeaderLg({ aboutIsOpen, aboutSetOpen }) {
   const [searchValue, setSearchValue] = useState("");
   const { colorMode, toggleColorMode } = useColorMode();
