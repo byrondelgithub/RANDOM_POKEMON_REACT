@@ -1,0 +1,3 @@
+/pkParaiso/*  https://www.pkparaiso.com/imagenes/:splat  200
+/projectPokemon/*  https://projectpokemon.org/images/:splat  200
+/pokeApi/*  https://pokeapi.co/api/v2/:splat  200
