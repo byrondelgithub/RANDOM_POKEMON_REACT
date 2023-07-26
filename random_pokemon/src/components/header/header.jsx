@@ -50,7 +50,7 @@ function Header() {
     return () => window.removeEventListener("scroll", handler);
   }, []);
 
-  const headerSize = !isScrolled ? ["105px", "80px"] : ["70px", "55px"];
+  const headerSize = !isScrolled ? ["105px", "80px"] : ["70px", "80px"];
 
   return (
     <>
@@ -75,7 +75,7 @@ function Header() {
             transition={"0.3s"}
             src={pokeballImg}
             alt="pokeball"
-            h={!isScrolled ? ["50px", "45px"] : ["35px", "30px"]}
+            h={!isScrolled ? ["50px", "45px"] : ["35px", "45px"]}
           />
         </Flex>
         <Flex h={"100%"} w={"100%"} padding={"20px"} position={"absolute"}>
@@ -86,7 +86,7 @@ function Header() {
                   transition={"0.3s"}
                   src={logo}
                   alt="pokeball interrogation logo"
-                  h={!isScrolled ? ["80px", "65px"] : ["60px", "50px"]}
+                  h={!isScrolled ? ["80px", "65px"] : ["60px", "65px"]}
                 />
               </LinkOverlay>
             </Center>
@@ -99,7 +99,7 @@ function Header() {
                 >
                   <Heading
                     transition={"0.3s"}
-                    size={!isScrolled ? "lg" : "md"}
+                    size={!isScrolled ? "lg" : ["md", "lg"]}
                     color={"black"}
                   >
                     Random pokemon generator

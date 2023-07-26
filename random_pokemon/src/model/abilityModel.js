@@ -33,7 +33,7 @@ export class AbilityModel {
    * @param {string} language language to filter the effetc_entries
    */
   constructor(abilityJSON, language) {
-    if (abilityJSON.flavor_text_entries.length) {
+    if (abilityJSON.effect_entries.length) {
       // filter the entries so only the ones with the selected language stays
       this.abilityEntries = abilityJSON.effect_entries.filter(
         (entry) => entry.language.name === language
@@ -41,7 +41,7 @@ export class AbilityModel {
     } else {
       // If there are no entries for this pokemon a default one is added
       this.abilityEntries.push({
-        flavor_text: "No description for this ability could be found.",
+        effect: "No description for this ability could be found.",
       });
     }
     this.id = abilityJSON.id;
