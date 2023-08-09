@@ -43,6 +43,7 @@ function ErrorPage() {
                 borderRadius={"20px"}
                 transition={"0.2s"}
                 _hover={{ w: ["101%", "1130px"] }}
+                alt={"error gif"}
               />
             </Center>
           </Link>

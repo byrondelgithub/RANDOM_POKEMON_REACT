@@ -22,7 +22,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import { AbilityModel } from "../../model/abilityModel";
 import { MoveModel } from "../../model/moveModel";
 import { NatureModel } from "../../model/natureModel";
-import AdsComponent from "../adsComponent/adsComponent";
 
 /**
  * The main component of the app. PokemonInfoLayout is in charge of generating the random pokemon and all of its random info (ability, moves etc).
@@ -77,11 +76,6 @@ function PokemonInfoLayout() {
 
   return (
     <>
-      <Show below="md">
-        <Center marginY={"5px"} h={"15%"}>
-          <AdsComponent dataAdSlot={6255433183} w={"85%"} h={"100%"} />
-        </Center>
-      </Show>
       <Stack
         margin={"auto"}
         h={"88%"}
@@ -91,20 +85,7 @@ function PokemonInfoLayout() {
       >
         <PokemonImage pokemonInfo={pokemonInfo} />
         <PokemonInfoTable pokemonInfo={pokemonInfo} />
-        <Show above="sm">
-          <AdsComponent dataAdSlot={6255433183} w={"15%"} h={"85%"} />
-        </Show>
       </Stack>
-      <Show below="md">
-        <Center h={"15%"} marginY={"5px"} marginBottom={""}>
-          <AdsComponent dataAdSlot={6255433183} w={"80%"} h={"100%"} />
-        </Center>
-      </Show>
-      <Show above="sm">
-        <Center h={"20%"} marginY={""} marginBottom={"50px"}>
-          <AdsComponent dataAdSlot={6255433183} w={"99%"} h={"100%"} />
-        </Center>
-      </Show>
     </>
   );
 }

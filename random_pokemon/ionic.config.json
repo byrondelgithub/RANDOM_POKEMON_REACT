@@ -1,0 +1,7 @@
+{
+  "name": "randompokegenerator",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}

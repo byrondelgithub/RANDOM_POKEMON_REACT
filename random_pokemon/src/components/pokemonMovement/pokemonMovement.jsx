@@ -146,20 +146,25 @@ function PokemonMovement({ move }) {
                 </Center>
                 <Center w={"100%"} padding={"5px"} flexDirection={"column"}>
                   <Heading size={"md"}>Category</Heading>
-                  <Tooltip
-                    label={move.damageClass}
-                    aria-label="damage catagory"
-                  >
-                    <Image
-                      src={
-                        move.damageClass === "special"
-                          ? specialIcon
-                          : physicalIcon
-                      }
-                      w={"80px"}
-                      marginTop={"10px"}
-                    />
-                  </Tooltip>
+                  {move.damageClass !== "status" ? (
+                    <Tooltip
+                      label={move.damageClass}
+                      aria-label="damage catagory"
+                    >
+                      <Image
+                        src={
+                          move.damageClass === "special"
+                            ? specialIcon
+                            : physicalIcon
+                        }
+                        w={"80px"}
+                        marginTop={"10px"}
+                        alt={"damage type sprite"}
+                      />
+                    </Tooltip>
+                  ) : (
+                    <Heading size={"md"}>—</Heading>
+                  )}
                 </Center>
                 <Center w={"100%"} padding={"5px"} flexDirection={"column"}>
                   <Heading size={"md"}>PP</Heading>

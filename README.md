@@ -1,6 +1,6 @@
 # Random Pokemon Generator website
 
-[You can access our website here](https://randompokemongenerator.com)
+[You can access our website here](https://random-poke-generator.com)
 
 ## Project Description
 

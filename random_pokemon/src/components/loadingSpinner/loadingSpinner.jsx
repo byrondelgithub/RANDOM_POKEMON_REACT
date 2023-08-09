@@ -18,6 +18,7 @@ function LoadinSpinner({ size, duration }) {
         src={spinner}
         animation={`rotation ${duration}s infinite linear`}
         w={size}
+        alt={"pokeball spinner"}
       ></Image>
     </>
   );

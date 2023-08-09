@@ -1,0 +1,11 @@
+{
+  "appId": "io.ionic.randompokegenerator",
+  "appName": "randompokegenerator",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "build",
+  "cordova": {},
+  "server": {
+    "androidScheme": "https"
+  }
+}

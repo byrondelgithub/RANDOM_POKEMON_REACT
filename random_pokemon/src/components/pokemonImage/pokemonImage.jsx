@@ -61,6 +61,7 @@ function PokemonImage({ pokemonInfo }) {
                 src={shinyIcon}
                 w={"15%"}
                 filter={colorMode === "light" ? "invert(1)" : ""}
+                alt={"pokemon sprite"}
               />
             </Box>
           ) : (
@@ -97,6 +98,7 @@ function PokemonImage({ pokemonInfo }) {
                   src={URL.createObjectURL(pokemonInfo.image)}
                   h={"100%"}
                   objectFit={"contain"}
+                  alt={"pokemon sprite"}
                 />
               </Center>
             </Link>
@@ -119,6 +121,7 @@ function PokemonImage({ pokemonInfo }) {
                   h={"100%"}
                   padding={"50px"}
                   objectFit={"contain"}
+                  alt={"pokemon sprite"}
                 />
               </Center>
             </AlertDialogContent>
