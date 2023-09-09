@@ -3,7 +3,7 @@
  * @author Rubén Hurtado <rhurtadoportillo@gmail.com>
  * @exports PokemonInfoLayout
  */
-import { Center, Show, Stack } from "@chakra-ui/react";
+import { Box, Center, IconButton, Stack, Text } from "@chakra-ui/react";
 import PokemonInfoTable from "../pokemonInfoTable/pokemonInfoTable";
 import PokemonImage from "../pokemonImage/pokemonImage";
 import React, { useState } from "react";
@@ -22,6 +22,9 @@ import { useNavigate, useParams } from "react-router-dom";
 import { AbilityModel } from "../../model/abilityModel";
 import { MoveModel } from "../../model/moveModel";
 import { NatureModel } from "../../model/natureModel";
+import { IoChevronDownOutline, IoChevronUpOutline } from "react-icons/io5";
+import "./pokemonInfoLayout.scss";
+import ExtraInfo from "../extraInfo/extraInfo";
 
 /**
  * The main component of the app. PokemonInfoLayout is in charge of generating the random pokemon and all of its random info (ability, moves etc).
@@ -34,6 +37,16 @@ function PokemonInfoLayout() {
   const [pokemonInfo, setPokemon] = useState(null);
   const { pokemonId, isShiny } = useParams();
   const navigate = useNavigate();
+
+  function goDown(event) {
+    document.getElementById(
+      "wrapper"
+    ).style.transform = `translateY(${-100}vh)`;
+  }
+
+  function goUp(event) {
+    document.getElementById("wrapper").style.transform = `translateY(${0}vh)`;
+  }
 
   React.useEffect(() => {
     const getPokemon = async (id, natureId, shiny) => {
@@ -76,16 +89,44 @@ function PokemonInfoLayout() {
 
   return (
     <>
-      <Stack
-        margin={"auto"}
-        h={"88%"}
-        justifyContent={"space-around"}
-        alignItems={"center"}
-        direction={["column", "row"]}
-      >
-        <PokemonImage pokemonInfo={pokemonInfo} />
-        <PokemonInfoTable pokemonInfo={pokemonInfo} />
-      </Stack>
+      <Box h={"88%"} w={"100%"} id="wrapper" transition={"all 1.5s ease"}>
+        <Stack
+          h={"95%"}
+          w={"100%"}
+          margin={"auto"}
+          justifyContent={"space-around"}
+          alignItems={"center"}
+          direction={["column", "row"]}
+        >
+          <PokemonImage pokemonInfo={pokemonInfo} />
+          <PokemonInfoTable pokemonInfo={pokemonInfo} />
+        </Stack>
+        <Center>
+          <IconButton
+            h={"5%"}
+            variant={"unstyled"}
+            aria-label={"Help"}
+            transition={"0.2s"}
+            fontSize={[40, 110]}
+            color={"gray"}
+            icon={<IoChevronDownOutline />}
+            onClick={goDown}
+          />
+        </Center>
+        <Center marginTop={["35%", "5%"]}>
+          <IconButton
+            h={"5%"}
+            variant={"unstyled"}
+            aria-label={"Help"}
+            transition={"0.2s"}
+            fontSize={[40, 110]}
+            color={"gray"}
+            icon={<IoChevronUpOutline />}
+            onClick={goUp}
+          />
+        </Center>
+        <ExtraInfo></ExtraInfo>
+      </Box>
     </>
   );
 }

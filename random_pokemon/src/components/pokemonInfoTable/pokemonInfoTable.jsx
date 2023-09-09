@@ -249,11 +249,13 @@ function PokemonInfoTable({ pokemonInfo }) {
               <Heading size={"md"}>Moves</Heading>
               <Grid
                 w={["95%", "80%"]}
-                templateColumns={`repeat(${Math.ceil(
-                  pokemonInfo.moves.length / 2
-                )}, ${pokemonInfo.moves.length === 1 ? "100" : "50"}%)`}
+                templateColumns={`repeat(${
+                  pokemonInfo.moves.length > 1 ? 2 : 1
+                }, ${pokemonInfo.moves.length === 1 ? "100" : "50"}%)`}
                 templateRows={
-                  pokemonInfo.moves.length >= 2 ? "repeat(2, 70px)" : null
+                  pokemonInfo.moves.length > 2
+                    ? "repeat(2, 70px)"
+                    : "repeat(1, 70px)"
                 }
                 gap={2}
                 marginTop={"10px"}
